@@ -1,0 +1,181 @@
+	.text
+	.def	 main;
+	.scl	2;
+	.type	32;
+	.endef
+	.section	.rdata,"dr"
+	.p2align	4
+.LCPI0_0:
+	.quad	1
+	.quad	2
+	.text
+	.globl	main
+	.p2align	4, 0x90
+main:
+.Lcfi0:
+.seh_proc main
+	pushq	%rbp
+.Lcfi1:
+	.seh_pushreg 5
+	pushq	%r14
+.Lcfi2:
+	.seh_pushreg 14
+	pushq	%rsi
+.Lcfi3:
+	.seh_pushreg 6
+	pushq	%rdi
+.Lcfi4:
+	.seh_pushreg 7
+	pushq	%rbx
+.Lcfi5:
+	.seh_pushreg 3
+	subq	$96, %rsp
+.Lcfi6:
+	.seh_stackalloc 96
+	leaq	96(%rsp), %rbp
+.Lcfi7:
+	.seh_setframe 5, 96
+.Lcfi8:
+	.seh_endprologue
+	callq	__main
+	movq	_T0s23_ContiguousArrayStorageCyypGML(%rip), %rcx
+	testq	%rcx, %rcx
+	jne	.LBB0_4
+	movq	_T0ypML(%rip), %rcx
+	testq	%rcx, %rcx
+	jne	.LBB0_3
+	leaq	-8(%rbp), %r9
+	movl	$1, %ecx
+	xorl	%edx, %edx
+	xorl	%r8d, %r8d
+	callq	swift_rt_swift_getExistentialTypeMetadata
+	movq	%rax, %rcx
+	movq	%rcx, _T0ypML(%rip)
+.LBB0_3:
+	callq	_T0s23_ContiguousArrayStorageCMa
+	movq	%rax, %rcx
+	movq	%rcx, _T0s23_ContiguousArrayStorageCyypGML(%rip)
+.LBB0_4:
+	movl	48(%rcx), %eax
+	movzwl	52(%rcx), %r8d
+	addq	$7, %rax
+	movabsq	$8589934584, %rdx
+	andq	%rax, %rdx
+	addq	$32, %rdx
+	orq	$7, %r8
+	callq	swift_rt_swift_allocObject
+	movq	%rax, %rsi
+	movq	_T0s27_ContiguousArrayStorageBaseC16countAndCapacitys01_B4BodyVvpWvd(%rip), %rax
+	movaps	.LCPI0_0(%rip), %xmm0
+	movups	%xmm0, (%rsi,%rax)
+	leaq	_T0SSN(%rip), %rax
+	movq	%rax, 56(%rsi)
+	callq	_T0s19_emptyStringStorages6UInt32Vvau
+	leaq	.L__unnamed_1(%rip), %rcx
+	cmpq	%rcx, %rax
+	je	.LBB0_5
+	movq	%rcx, %xmm0
+	movl	$12, %eax
+	movq	%rax, %xmm1
+	punpcklqdq	%xmm1, %xmm0
+	movdqu	%xmm0, 32(%rsi)
+	movq	$0, 48(%rsi)
+	callq	_T0s5printyypd_SS9separatorSS10terminatortFfA0_
+	movq	%rax, %rdi
+	movq	%rdx, %rbx
+	movq	%rcx, %r14
+	callq	_T0s5printyypd_SS9separatorSS10terminatortFfA1_
+	movq	%rcx, 48(%rsp)
+	movq	%rdx, 40(%rsp)
+	movq	%rax, 32(%rsp)
+	movq	%rsi, %rcx
+	movq	%rdi, %rdx
+	movq	%rbx, %r8
+	movq	%r14, %r9
+	callq	_T0s5printyypd_SS9separatorSS10terminatortF
+	xorl	%eax, %eax
+	addq	$96, %rsp
+	popq	%rbx
+	popq	%rdi
+	popq	%rsi
+	popq	%r14
+	popq	%rbp
+	retq
+.LBB0_5:
+	leaq	.L__unnamed_2(%rip), %rax
+	movq	%rax, 48(%rsp)
+	movl	$0, 80(%rsp)
+	movq	$69, 72(%rsp)
+	movl	$2, 64(%rsp)
+	movq	$53, 56(%rsp)
+	movl	$2, 40(%rsp)
+	movq	$40, 32(%rsp)
+	leaq	.L__unnamed_3(%rip), %rcx
+	leaq	.L__unnamed_4(%rip), %r9
+	movl	$11, %edx
+	movl	$2, %r8d
+	callq	_T0s18_fatalErrorMessages5NeverOs12StaticStringV_A2E4fileSu4lines6UInt32V5flagstF
+	ud2
+	.seh_handlerdata
+	.text
+.Lcfi9:
+	.seh_endproc
+
+	.def	 swift_rt_swift_getExistentialTypeMetadata;
+	.scl	2;
+	.type	32;
+	.endef
+	.globl	swift_rt_swift_getExistentialTypeMetadata
+	.p2align	4, 0x90
+swift_rt_swift_getExistentialTypeMetadata:
+	movq	_swift_getExistentialTypeMetadata(%rip), %rax
+	rex64 jmpq	*%rax
+
+	.def	 swift_rt_swift_allocObject;
+	.scl	2;
+	.type	32;
+	.endef
+	.globl	swift_rt_swift_allocObject
+	.p2align	4, 0x90
+swift_rt_swift_allocObject:
+	movq	_swift_allocObject(%rip), %rax
+	rex64 jmpq	*%rax
+
+	.bss
+	.globl	_T0s23_ContiguousArrayStorageCyypGML
+	.p2align	3
+_T0s23_ContiguousArrayStorageCyypGML:
+	.quad	0
+
+	.globl	_T0ypML
+	.p2align	3
+_T0ypML:
+	.quad	0
+
+	.section	.rdata,"dr"
+.L__unnamed_1:
+	.asciz	"Hello shri!!"
+
+	.p2align	4
+.L__unnamed_2:
+	.asciz	"C:/projects/swift/stdlib/public/core/StringCore.swift"
+
+	.p2align	4
+.L__unnamed_4:
+	.asciz	"Empty string storage with non-zero count"
+
+.L__unnamed_3:
+	.asciz	"Fatal error"
+
+	.globl	__swift_reflection_version
+	.p2align	1
+__swift_reflection_version:
+	.short	3
+
+	.section	.swift1_autolink_entries,"dr"
+	.p2align	3
+.L_swift1_autolink_entries:
+	.asciz	"-lswiftCore"
+
+	.section	.drectve,"yn"
+
